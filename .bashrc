@@ -115,6 +115,7 @@ alias tmux="tmux -2"
 
 # aliases
 alias agi='sudo apt-get install'
+alias agr='sudo apt-get remove'
 alias agud='sudo apt-get update'
 alias agug='sudo apt-get upgrade'
 alias acs='sudo apt-cache search'
