@@ -5,13 +5,12 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'itspriddle/vim-fuzzyfinder-pathogen.git'
 
 " key mappings
 noremap <F4> :set hlsearch! hlsearch?<CR>
