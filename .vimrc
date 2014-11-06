@@ -14,9 +14,7 @@ Bundle 'kien/ctrlp.vim'
 
 " key mappings
 noremap <F4> :set hlsearch! hlsearch?<CR>
-" imap <M-Space> <Esc>
 imap ii <Esc>
-" imap <leader>j <Esc> 
 map <leader>b :FufBuffer<CR>
 map <leader>f :FufFile<CR>
 
