@@ -9,7 +9,8 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
-"Bundle 'scrooloose/syntastic.git'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'kien/ctrlp.vim'
 "Bundle 'itspriddle/vim-fuzzyfinder-pathogen.git'
 
 " key mappings
