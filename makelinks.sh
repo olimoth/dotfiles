@@ -14,3 +14,7 @@ for dotfile in $dotfiles; do
     ln -s $dotdir/$dotfile ~/$dotfile
 done
 popd
+
+echo "symlinking vim colourscheme"
+mv ~/.vim/colors/monokai.vim $backupdir/
+ln -s $dotdir/monokai.vim ~/.vim/colors/monokai.vim
