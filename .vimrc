@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 " vundle stuff
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/Vundle.vim'
@@ -15,8 +15,8 @@ Bundle 'kien/ctrlp.vim'
 " key mappings
 noremap <F4> :set hlsearch! hlsearch?<CR>
 imap ii <Esc>
-map <leader>b :FufBuffer<CR>
-map <leader>f :FufFile<CR>
+map <leader>b :CtrlPBuffer<CR>
+map <leader>f :CtrlP<CR>
 
 " easier moving in windows
 map <C-J> <C-W>j
