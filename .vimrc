@@ -7,8 +7,6 @@ call vundle#rc()
 
 Bundle 'gmarik/Vundle.vim'
 Bundle 'scrooloose/nerdtree.git'
-Bundle 'guns/vim-clojure-static'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'kien/ctrlp.vim'
 
@@ -26,6 +24,7 @@ map <C-H> <C-W>h
 
 " snippets
 ab pdb import pdb; pdb.set_trace()
+ab ipdb import ipdb; ipdb.set_trace()
 
 " editor stuff
 set expandtab
@@ -35,14 +34,26 @@ set shiftwidth=4
 set autoindent
 set backspace=2
 set number
+set ignorecase
+set smartcase
+set directory=~/.vim/swapfiles//
+set timeoutlen=250
 syn on
 filetype plugin indent on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
 hi MatchParen cterm=underline
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype c setlocal noexpandtab
+autocmd Filetype ch setlocal noexpandtab
+
+" gui stuff
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
 
 "colors
 set t_Co=256
 colorscheme monokai
 
-
+" syntax
+let g:syntastic_python_checkers=['python']
