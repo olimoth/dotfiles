@@ -68,6 +68,13 @@ autocmd BufEnter *.pp :setlocal filetype=ruby
 set t_Co=256
 colorscheme monokai
 
+" Color trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
 " syntax
 let g:syntastic_python_checkers=['python'] ", 'pylint']
 let g:syntastic_python_pylint_args = '-E' "'--disable=R,C,global-statement'
