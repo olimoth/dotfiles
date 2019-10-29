@@ -64,7 +64,7 @@ autocmd BufEnter *.pp :setlocal filetype=ruby
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
 
-"colors
+" colors
 set t_Co=256
 colorscheme monokai
 
@@ -79,7 +79,7 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 let g:syntastic_python_checkers=['python'] ", 'pylint']
 let g:syntastic_python_pylint_args = '-E' "'--disable=R,C,global-statement'
 
-"functions
+" functions
 function! s:goyo_enter()
     set linebreak
 endfunction
@@ -87,6 +87,9 @@ endfunction
 function! s:goyo_leave()
     set nolinebreak
 endfunction
+
+" tags
+set tags=tags;/
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
