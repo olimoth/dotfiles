@@ -19,6 +19,7 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 imap ii <Esc>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>f :CtrlP<CR>
+map <leader>t :CtrlPTag<CR>
 
 " easier moving in windows
 map <C-J> <C-W>j
@@ -53,6 +54,7 @@ hi MatchParen cterm=underline
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype c setlocal noexpandtab
 autocmd Filetype ch setlocal noexpandtab
+autocmd Filetype cpp setlocal noexpandtab
 autocmd BufEnter *.pp :setlocal filetype=ruby
 
 
@@ -66,7 +68,7 @@ autocmd BufEnter *.pp :setlocal filetype=ruby
 
 " colors
 set t_Co=256
-colorscheme monokai
+colorscheme distinguished
 
 " Color trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -76,8 +78,18 @@ au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 " syntax
-let g:syntastic_python_checkers=['python'] ", 'pylint']
+function Py2()
+    let g:syntastic_python_python_exec = '/usr/bin/python2.7'
+endfunction
+
+function Py3()
+    let g:syntastic_python_python_exec = '/home/garyw/.pyenv/versions/3.6.5/bin/python'
+endfunction
+
+call Py2()   " default to Py3 because I try to use it when possible
+let g:syntastic_python_checkers=['python'] " , 'pylint']
 let g:syntastic_python_pylint_args = '-E' "'--disable=R,C,global-statement'
+let g:syntastic_ruby_checkers=['puppet-lint']
 
 " functions
 function! s:goyo_enter()

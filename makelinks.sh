@@ -19,3 +19,4 @@ echo "symlinking vim colourscheme"
 mv ~/.vim/colors/monokai.vim $backupdir/
 mkdir -p ~/.vim/colors
 ln -s $dotdir/monokai.vim ~/.vim/colors/monokai.vim
+ln -s $dotdir/distinguished.vim ~/.vim/colors/distinguished.vim
