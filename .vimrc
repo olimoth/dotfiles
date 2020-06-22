@@ -86,7 +86,7 @@ function Py3()
     let g:syntastic_python_python_exec = '/home/garyw/.pyenv/versions/3.6.5/bin/python'
 endfunction
 
-call Py2()   " default to Py3 because I try to use it when possible
+call Py2()
 let g:syntastic_python_checkers=['python'] " , 'pylint']
 let g:syntastic_python_pylint_args = '-E' "'--disable=R,C,global-statement'
 let g:syntastic_ruby_checkers=['puppet-lint']
