@@ -13,10 +13,13 @@ Bundle 'junegunn/goyo.vim'
 Bundle 'reedes/vim-pencil'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'mileszs/ack.vim'
+Bundle 'pprovost/vim-ps1'
 
 " key mappings
 noremap <F4> :set hlsearch! hlsearch?<CR>
 imap ii <Esc>
+nmap gh :tabprevious<CR>
+nmap gl :tabnext<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>f :CtrlP<CR>
 map <leader>t :CtrlPTag<CR>
@@ -78,15 +81,7 @@ au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 " syntax
-function Py2()
-    let g:syntastic_python_python_exec = '/usr/bin/python2.7'
-endfunction
-
-function Py3()
-    let g:syntastic_python_python_exec = '/home/garyw/.pyenv/versions/3.6.5/bin/python'
-endfunction
-
-call Py2()
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_checkers=['python'] " , 'pylint']
 let g:syntastic_python_pylint_args = '-E' "'--disable=R,C,global-statement'
 let g:syntastic_ruby_checkers=['puppet-lint']
