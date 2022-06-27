@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+# load the profile
+source /home/garyw/.zprofile
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/garyw/.oh-my-zsh"
@@ -9,7 +12,8 @@ export ZSH="/home/garyw/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+ZSH_THEME="gira"
+#ZSH_THEME="rkj-gary"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -43,7 +47,7 @@ ZSH_THEME="bira"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -105,9 +109,12 @@ bindkey -M viins 'ii' vi-cmd-mode
 # For a full list of active aliases, run `alias`.
 #
 
-alias gs='git status --untracked-files=no'
+alias gs='git status' # --untracked-files=no'
 alias act='source env/bin/activate'
 alias ll='ls -lah'
+alias kc='kubectl'
+alias jh='jhurl -s services.gew1.spotify.net'
+alias nud='nvm use default'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -117,3 +124,25 @@ alias ll='ls -lah'
 export ONE_HOUR=3600
 export FOUR_HOURS=14400
 export EIGHT_HOURS=28800
+export PATH=$PATH:/home/garyw/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/garyw/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/garyw/apps/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/garyw/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/garyw/apps/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# kubernetes stuff
+#source <(kubectl completion zsh)
+
+# direnv
+eval "$(direnv hook zsh)"
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

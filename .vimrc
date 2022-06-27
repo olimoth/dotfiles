@@ -14,15 +14,22 @@ Bundle 'reedes/vim-pencil'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'mileszs/ack.vim'
 Bundle 'pprovost/vim-ps1'
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
 
 " key mappings
 noremap <F4> :set hlsearch! hlsearch?<CR>
+noremap <F2> :set paste! paste?<CR>
 imap ii <Esc>
 nmap gh :tabprevious<CR>
 nmap gl :tabnext<CR>
-map <leader>b :CtrlPBuffer<CR>
-map <leader>f :CtrlP<CR>
-map <leader>t :CtrlPTag<CR>
+"map <leader>b :CtrlPBuffer<CR>
+map <leader>b :Buffers<CR>
+"map <leader>f :CtrlP<CR>
+map <leader>g :Files<CR>
+map <leader>f :GFiles<CR>
+"map <leader>t :CtrlPTag<CR>
+map <leader>t :Tags<CR>
 
 " easier moving in windows
 map <C-J> <C-W>j
@@ -55,6 +62,8 @@ syn on
 filetype plugin indent on
 hi MatchParen cterm=underline
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescriptreact setlocal ts=2 sts=2 sw=2
 autocmd Filetype c setlocal noexpandtab
 autocmd Filetype ch setlocal noexpandtab
 autocmd Filetype cpp setlocal noexpandtab
@@ -71,7 +80,7 @@ autocmd BufEnter *.pp :setlocal filetype=ruby
 
 " colors
 set t_Co=256
-colorscheme distinguished
+colorscheme monokai
 
 " Color trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
