@@ -46,18 +46,20 @@ ab pdb import pdb; pdb.set_trace()
 ab ipdb import ipdb; ipdb.set_trace()
 
 " editor stuff
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 set autoindent
 set backspace=2
-set number
-set ignorecase
-set smartcase
 set directory=~/.vim/swapfiles//
-set timeoutlen=250
+set expandtab
 set hidden
+set ignorecase
+set mouse=a
+set number
+set shiftwidth=4
+set smartcase
+set softtabstop=4
+set tabstop=4
+set timeoutlen=250
+set ttymouse=xterm2
 syn on
 filetype plugin indent on
 hi MatchParen cterm=underline
@@ -80,7 +82,7 @@ autocmd BufEnter *.pp :setlocal filetype=ruby
 
 " colors
 set t_Co=256
-colorscheme monokai
+colorscheme molokai
 
 " Color trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -105,7 +107,7 @@ function! s:goyo_leave()
 endfunction
 
 " tags
-set tags=tags;/
+set tags=./tags,tags;$HOME
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
