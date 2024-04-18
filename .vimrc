@@ -6,14 +6,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/Vundle.vim'
-Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'junegunn/goyo.vim'
-Bundle 'reedes/vim-pencil'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'mileszs/ack.vim'
-Bundle 'pprovost/vim-ps1'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
 
